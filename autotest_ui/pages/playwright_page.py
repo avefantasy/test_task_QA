@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect
 class PlaywrightPage:
 
     URL = "https://playwright.dev/"
-    EXPECTED_TITLE = "Fast and reliable end-to-end testing for modern web apps | Playwright"
+    TITLE_TEXT = "Fast and reliable end-to-end testing for modern web apps | Playwright"
 
     def __init__(self, page: Page):
         self.page = page
@@ -12,5 +12,5 @@ class PlaywrightPage:
         self.page.goto(self.URL)
 
     def check_page_title(self):
-        expect(self.page).to_have_title(self.EXPECTED_TITLE)
+        expect(self.page).to_have_title(self.TITLE_TEXT)
 
